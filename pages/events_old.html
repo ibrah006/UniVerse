@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/events.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">UniVerse</div>
+        <div>
+            <nav>
+                <a id="home-nav" href="home.html">Home</a>
+                <a id="events-nav" href="#">Events</a>
+                <a id="about-nav" href="#">About</a>
+                <a id="contact-nav" href="#">Contact</a>
+            </nav>
+            <a href="#" class="button">Buy Ticket</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <video class="background-video"  muted loop>
+              <source src="../assets/videos/events-page-header.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <div class="centered-text">
+              <h1>What's On</h1>
+              <p >Missed one? Don't worry. Check on what's next and never miss another!</p>
+              <a href="#" class="button">Register Now</a>
+            
+              <div class="chevron" style="color: white; height: 10vh; align-content: end; font-size: 17.5px;">
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>            
+            
+          </div>
+
+        <!-- Events Section-->
+        <div class="events-section">
+
+            <!-- Event Details -->
+            <div class="event-details">
+                <div class="event-details-container right-border">
+                    <div class="icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h4>DATE & TIME</h4>
+                    <hr>
+                    <p>11:00 AM - 11:00 PM</p>
+                </div>
+                <div class="event-details-container">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>LOCATION</h4>
+                    <hr>
+                    <p>Auditorium Hall</p>
+                </div>
+                <div class="event-details-container right-border">
+                    <div class="icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4>INDUSTRY</h4>
+                    <hr>
+                    <p>Education & Student Development</p>
+                </div>
+                <div class="event-details-container">
+                    <div class="icon">
+                        <i class="fas fa-users"></i> <!-- 'far' for outline version -->
+                    </div>
+                    <h4>ORGANIZED BY</h4>
+                    <hr>
+                    <p>College Administration & Admissions Team</p>
+                </div>
+            </div>
+
+            <!-- Events List -->
+            <div class="events-list">
+                <h1 style="color: black; font-weight: 500;">Events</h1>
+
+                <!-- Event Cards -->
+                 <div class="event-card">
+                    <img class="event-img" src="../assets/event-thumbnails/freashmanorientation.jpg">
+                    <div class="event-card-content">
+                        <h1 class="event-card-title">Freshman Orientation</h1>
+                        <p>Join us for Freshman Orientation to get an overview of your college journey. Interact with faculty, participate in icebreaker activities...</p>
+
+                        <div class="event-card-footer">
+                            <p>Friday, 24 March 2025</p>
+                            <a href="#" class="text-button">
+                                Learn more
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="event-card">
+                    <img class="event-img"  src="../assets/event-thumbnails/techfest.jpg">
+                    <div class="event-card-content">
+                        <h1 class="event-card-title">Tech Fest 2023</h1>
+                        <p>Dive into a world of technology and innovation with hands-on workshops, tech exhibits, and keynote speeches from industry...</p>
+
+                        <div class="event-card-footer">
+                            <p>Saturday, 03 April 2025</p>
+                            <a href="#" class="text-button">
+                                Learn more
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        // Function to check and adjust width of the image
+        function checkAndAdjustImageWidth() {
+          const eventCard = document.querySelector('.event-card');
+
+          const img = document.querySelector('.event-img');
+    
+          // Check if the width is less than 200px
+          if (eventCard.offsetWidth < 1280) {
+            img.style.width = '400px'; // Set width to 400px
+          } else {
+            img.style.width = '5vw'; // Revert back to original width (5vw)
+          }
+        }
+    
+        // Run the function when the page loads and on window resize
+        // window.addEventListener('load', checkAndAdjustImageWidth);
+        // window.addEventListener('resize', checkAndAdjustImageWidth);
+    </script>
+
+    <script>
+        function updateNavSelection() {
+            const pathSplit = window.location.pathname.split("/");
+            let currentPage = pathSplit[pathSplit.length - 1];
+            currentPage = currentPage.replace("#", "");
+            currentPage = currentPage.replace(".html", "");
+
+            let currentNavElementSelected = document.getElementById(`${currentPage}-nav`);
+
+            console.log(`${currentPage}\n trying t get element by id: ${`${currentPage}-nav`}`);
+
+            currentNavElementSelected.className = "active";
+        }
+
+        updateNavSelection();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,186 @@
+.main {
+    padding: 0px;
+    padding-inline: 125px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+@media (max-width: 650) {
+    .main {
+        padding-inline: 10px;
+    }
+}
+
+main .button {
+    padding-block: 12.5px;
+    padding-inline: 68px;
+    border-radius: 30px;
+    font-size: 15.5px;
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 34px;
+}
+
+
+.text-button {
+    padding-block: 12.5px;
+    color: #E52A6A;
+    text-decoration: none;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 75px
+}
+  
+.background-video {
+    width: 100%;
+    height: 57vh;
+    min-height: 390px;
+    object-fit: cover;
+    background: rgba(0,0,0,0.5)
+}
+  
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 56.5vh ;
+    min-height: 390px;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+  
+.centered-text p {
+    margin: 5px 0;
+}
+
+
+/* Header text */
+.video-container .centered-text h1 {
+    padding-top: 14vh;
+    font-weight: 500;
+    margin-bottom: 3vh;
+    font-size: 8vh;
+}
+
+/* header sub title "Missed one? ...." */
+.video-container .centered-text p {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding-bottom: 45px;
+    margin-top: 0px;
+    padding-inline: 40px;
+}
+
+.events-list {
+    /* height: 100vh; */
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns, evenly spaced */
+    grid-gap: 20px; /* Gap between grid items */
+    width: 100%; /* Full container width */
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1200px) {
+    .events-list {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+      /*padding: 0 5%; Reduced padding on smaller screens */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .events-list {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
+      /* padding: 0 5%; */
+    }
+  }
+
+
+.event-card {
+  background-color: #f9f9f9;
+  width: inherit;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  }
+
+  .event-card:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+.event-card .card-content {
+    /* padding: 10px; */
+ /* Flexbox properties to align content */
+  display: flex;
+  flex-direction: column; /* Ensure vertical layout */
+  align-items: flex-start;  /* Aligns children to the left (start of flex container) */
+  justify-content: flex-start;
+  padding: 15px;
+  padding-top: 0px;
+}
+
+.event-date {
+    color: #757575;
+    font-size: 14px;
+    margin: 0;
+  }
+
+.event-title {
+    color: #d81b60; /* Matches red accent color */
+    font-weight: bold;
+    margin: 0px;
+    text-align: left;
+    margin-top: 25px;
+    font-size: 30px
+  }
+
+.event-description {
+    color: #333;
+    font-size: 15.5px;
+    margin-block: 25px;
+    text-align: start;
+  }
+/* 
+.events-grid {
+    display: grid;
+
+} */
+
+
+.event-card img {
+    margin: 0px;
+    width: inherit
+}
+
+/* chevron-down icon in the header */
+.centered-text .chevron {
+  font-size: 17.5px;
+  color: white;
+  animation: bounce 2s ease-in-out infinite; /* Apply the animation */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at the normal position */
+    }
+    50% {
+        transform: translateY(20px); /* Move up by 5px */
+    }
+    100% {
+        transform: translateY(0); /* End back at the normal position */
+    }
+}

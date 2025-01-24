@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniVerse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- <style>
+
+  </style> -->
+</head>
+<body>
+
+<header>
+  <a class="logo" href="home.html">UniVerse</a>
+  <div>
+    <nav id="nav-elements">
+      <a id="home-nav" href="#" class="active">Home</a>
+      <a id="events-nav" href="events.html">Events</a>
+      <a id="about-nav" href="#">About</a>
+      <a id="contact-nav" href="#">Contact</a>
+    </nav>
+    <a href="#" class="button">Buy Ticket</a>
+  </div>
+</header>
+
+<main class="header-parent">
+    <div class="header-main-content">
+        <div class="countdown ">
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>Days</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>Hours</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>Minutes</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>Seconds</label>
+            </div>
+        </div>
+        
+        <div id="event-title-date">
+            <div class="event-date">March 24, 2025</div>
+            <div class="event-title">Freshman Orientation</div>
+        </div>
+
+        <div class="buttons">
+            <a href="#" class="register button">Register Now</a>
+            <a href="#" class="learn-more button">Learn More</a>
+        </div>
+    </div>
+    <div style="flex: 1">
+    </div>
+</main>
+
+<script>
+  const eventDate = new Date("March 24, 2025 00:00:00").getTime();
+
+  function formatTime(time) {
+    if (Number(time) < 10) {
+      return `0${time}`;
+    }
+    return time;
+  }
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = formatTime(days);
+    document.getElementById("hours").textContent = formatTime(hours);
+    document.getElementById("minutes").textContent = formatTime(minutes);
+    document.getElementById("seconds").textContent = formatTime(seconds);
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.querySelector(".countdown").textContent = "Event Started";
+    }
+  }, 1000);
+
+  function updateNavSelection() {
+    const pathSplit = window.location.pathname.split("/");
+    let currentPage = pathSplit[pathSplit.length - 1];
+    currentPage = currentPage.replace("#", "");
+    currentPage = currentPage.replace(".html", "");
+
+    console.log(`${currentPage}\ntrying to get element by id: ${`${currentPage}-nav`}`);
+
+    let currentNavElementSelected = document.getElementById(`${currentPage}-nav`);
+
+    currentNavElementSelected.style.color = "#E52A6A";
+  }
+
+  updateNavSelection();
+
+</script>
+
+</body>
+</html>
