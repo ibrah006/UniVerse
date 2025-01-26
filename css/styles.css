@@ -15,7 +15,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 25px;
+  padding-inline: 25px;
+  height: 100px;
   background-color: #FFFFFF;
 }
 
@@ -41,9 +42,9 @@ header nav {
 
 header nav a {
   text-decoration: none;
-  color: #2E2B3A;
   font-weight: bold;
   font-size: 22px;
+  color: #2E2B3A;
   padding-inline: 5px;
   margin-right: 38px;
 }
@@ -53,7 +54,11 @@ header nav a.active {
 }
 
 header nav a:hover {
-  color: #7e3e54
+  color: #933556
+}
+
+header nav .active:hover {
+  color: #E52A6A;
 }
 
 header .button {

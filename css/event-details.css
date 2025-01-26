@@ -1,0 +1,331 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    padding: 0px;
+    position: relative; /* Default position */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+main {
+    padding: 0px;
+    overflow: hidden;
+    margin: 0px;
+    /* Doc on MARGIN TOP */
+    /* We need to remove this margin when scrolling down starts for better look.
+    Otherwise a small white space (this 50px margin) shows up while scrolling (and will spoil the UX).
+    And then show this top margin back when scrolling up (preferabaly aboout 100px away from the very top)*/
+    margin-top: 50px; /* Space for header */
+    background-color: white;
+    /* height: 700px; */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    transition: margin-top 0.3s ease, height 0.5s ease; /* Smooth transition for height */
+    width: 100%;
+}
+
+/* Scroll down button */
+#scroll-down-button {
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #E52A6A;
+    top: 100%;
+    left: 100%;
+    border: solid 2px #E52A6A;
+    border-radius: 75px;
+    transform: translate(-140%, -140%);
+    transition: .3s ease;
+    cursor: pointer;
+}
+#scroll-down-button:hover {
+    background-color: #E52A6A;
+    color: white
+}
+
+.main-margin-zero {
+    margin-top: 0px; 
+}
+
+.hideElement {
+    visibility: hidden;
+}
+
+/* When the header becomes fixed, move the main down */
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    height: 100px;
+    /* reset */
+    /* height: 100px;
+    padding: 0px; */
+}
+
+.addCoverImg {
+    background-image: url('../assets/events/freashmanorientation.jpg');
+    background-size: cover;
+    /* height: 100px; */
+}
+
+/* Animating the shrinking of the main element on scroll */
+.shrinking {
+    height: 0px; /* Target smaller height when scrolling down */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;;
+    width: 100%;
+    padding-top: 52px;
+}
+
+.removePadding {
+    padding: 0px;
+}
+
+#header-elements {
+    position: absolute;
+    top: 20vh;
+}
+
+.button {
+    padding-block: 12.5px;
+    padding-inline: 68px;
+    border-radius: 30px;
+    font-size: 15.5px;
+    font-weight: 400;
+}
+
+/*// Navbar styling //*/
+
+.logo {
+    margin-left: 35px
+}
+
+/*// Navbar styling //*/
+
+/*// Header Content start //*/
+
+#header-img {
+    width: 100%
+}
+
+@media (max-width: 1300px) {
+    #header-img {
+        width: unset;
+        /* background: ; */
+        
+    }
+}
+
+/* #header-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35); Black with opacity for the overlay 
+    z-index: 1; Make sure it is behind the content, but above the background 
+  } */
+
+#header-title {
+    padding-top: 14vh;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 3vh;
+    font-size: 8vh;
+}
+
+#header-elements > p {
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 0.02em;
+    margin-top: 0px;
+    padding-inline: 40px;
+}
+
+/* override */
+#header-elements > button {
+    margin-block: 30px;
+}
+
+/* Bouncing chevron-down icon and Scroll Indicator */
+
+#scroll-indicator {
+    /* height: 10vh;  */
+    position: fixed;
+    height: 200px;
+    font-size: 20px;
+    top: 80vh;
+    left: 50%;  /* Horizontally centers the div (50% of the viewport width) */
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;    /* Horizontally center the content inside */
+    align-items: center;        /* Vertically center the content inside */
+    flex-direction: column;
+    /* transform: translateX(-50%); */
+    color: white;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+#scroll-indicator:hover {
+    color: #E52A6A;
+}
+
+.chevron {
+    animation: bounce 3s ease-in-out infinite; /* Apply the animation */
+    /* align-content: end; */
+    font-size: 17.5px;
+  }
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(20px); /* Bounce up */
+    }
+    50% {
+        transform: translateY(0); /* Return to original position */
+    }
+    80% {
+        transform: translateY(20px); /* Bounce up again */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+
+/* Bouncing chevron-down icon and Scroll Indicator */
+
+/*// Header Content end //*/
+
+
+/* Event Details Section */
+
+#main-content {
+    padding-top: 15vh;
+    padding-bottom: 8vh;
+    padding-inline: 18%;
+}
+
+@media (max-width: 1530px) {
+    #main-content{
+        padding-inline: 15%;
+    }
+}
+
+@media(max-width: 1230px) {
+    #main-content {
+        padding-inline: 10%
+    }
+}
+
+@media (max-width: 1075px) {
+    #main-content {
+        padding-inline: 9%;
+    }
+}
+
+#event-details {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.details-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 5vh;
+}
+
+.detail-item {
+    text-align: center;
+    max-width: 275px;
+    width: 180px;
+    font-size: 16px;
+    color: #2E2B3A;
+}
+
+.detail-item i {
+    font-size: 50px;
+    color: #E52A6A;
+}
+
+.detail-title {
+    font-weight: bold;
+    margin-block: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: #E52A6A;
+}
+
+.detail-item > hr {
+    width: 37px;
+    border: none;
+    height: 2px;
+    color: #ebebeb;
+    background-color: #ebebeb;
+}
+
+.detail-content {
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #2E2B3A;
+    font-weight: bold;
+}
+
+/* vertical rule */
+.vertical-rule {
+    border-left: 1.75px solid #ebebeb;
+    height: inherit
+}
+
+#event-details h2 {
+    font-size: 2.3rem;
+    color: #2E2B3A;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.event-description {
+    font-size: 1.35rem;
+    line-height: 1.65em;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+}
+
+.button {
+    padding-block: 12.5px;
+    padding-inline: 75px;
+    border-radius: 30px;
+    font-size: 17.5px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #C71E58;
+}

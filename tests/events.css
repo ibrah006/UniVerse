@@ -140,7 +140,7 @@ h1 {
   background-color: #f9f9f9;
   width: inherit;
   box-sizing: border-box;
-  transition: box-shadow 0.3s ease;  
+  transition: 0.3s ease;  
   }
 
   .event-card:hover {
@@ -198,7 +198,6 @@ h1 {
   font-size: 17.5px;
   color: white;
   animation: bounce 2s ease-in-out infinite; /* Apply the animation */
-  color: white; align-content: end; font-size: 17.5px;
 }
 
 @keyframes bounce {

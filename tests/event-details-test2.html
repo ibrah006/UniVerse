@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event details test 2</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="event-details.css">
+
+</head>
+<body>
+    <header id="header">
+        <div class="navbar">
+            <a class="logo" href="home.html">UniVerse</a>
+            <div>
+                <nav id="nav-items">
+                    <a class="nav-item" id="home-nav" href="home.html">Home</a>
+                    <a class="nav-item active" id="events-nav" href="#">Events</a>
+                    <a class="nav-item" id="about-nav" href="#">About</a>
+                    <a class="nav-item" id="contact-nav" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <img id="header-img" src="../assets/events/freashmanorientation.jpg">
+        <div id="header-elements">
+            <h1 id="header-title">Join Us Now!</h1>
+            <p>Welcome to campus! Meet your peers and learn about college life.</p>
+            <button class="button">Register</button>
+        </div>
+    </main>
+
+    <div id="scroll-indicator">
+        <p >Scroll to learn more</p>
+        <div class="chevron">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div id="main-content" style="height: auto;">
+        <section id="event-details">
+            <div class="details-row">
+                <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <p class="detail-title">DATE & TIME</p>
+                    <hr>
+                    <p class="detail-content">11:00 AM - 11:00 PM</p>
+                </div>
+                <div class="vertical-rule"></div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p class="detail-title">LOCATION</p>
+                    <hr>
+                    <p class="detail-content">Auditorium Hall</p>
+                </div>
+                <div class="vertical-rule"></div>
+                <div class="detail-item">
+                    <i class="fas fa-building"></i>
+                    <p class="detail-title">INDUSTRY</p>
+                    <hr>
+                    <p class="detail-content">Education and Student Development</p>
+                </div>
+                <div class="vertical-rule"></div>
+                <div class="detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <p class="detail-title">ORGANIZED BY</p>
+                    <hr>
+                    <p class="detail-content">College Administration & Admissions Team</p>
+                </div>
+            </div>
+            <h2>About The Event</h2>
+            <p class="event-description">
+                Freshman Orientation is a pivotal event designed to welcome new students to campus life. This day-long program provides valuable insights into academic programs, student resources, and extracurricular activities. You'll meet professors, make new friends, and gain confidence to start your college journey. The event also features guided campus tours, motivational talks from alumni, and engaging icebreaker sessions to foster a sense of belonging.
+                <br><br>
+                Join us for Freshman Orientation to get an overview of your college journey. Interact with faculty, participate in icebreaker activities, and explore the campus facilities.
+            </p>
+            <br><br>
+            <button class="button">Register</button>
+        </section>
+    </div>
+
+    <div id="scroll-down-button" class="hideElement">
+        <div>
+            <i class="fas fa-chevron-down" style="font-size: 18px;"></i>
+        </div>
+    </div>
+
+    <script>
+
+        // <start> bottom scroll <start> //
+
+        // const 
+
+        // A function that is to be passed as callback to listen fo scroll events
+        // Manages the bottom scroll left
+
+        const BOTTOM_IGNORE_OFFSET = 110;
+
+        const scrollDownButton = document.getElementById("scroll-down-button");
+
+        scrollDownButton.addEventListener("click", ()=> {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: "smooth"
+            })
+        })
+
+        function toggleScrollDownButtonVisibility(hide) {
+            if (hide) {
+                scrollDownButton.classList.add("hideElement");
+            } else {
+                scrollDownButton.classList.remove("hideElement");
+            }
+        }
+
+        function getBottomScrollLeft() {
+            const scrollTop = window.scrollY; // Current scroll position from the top
+            const viewportHeight = window.innerHeight; // Height of the visible viewport
+            const fullHeight = document.documentElement.scrollHeight; // Full height of the document
+
+            // const offset = 50; // Offset (in pixels) from the bottom to trigger the event
+
+            const bottomScrollLeft = fullHeight - viewportHeight - scrollTop;
+
+            console.log(`bottom scroll left: ${bottomScrollLeft}`)
+
+            return bottomScrollLeft;
+        }
+
+        function checkBottomScrollLeft() {
+            const bottomScrollLeft = getBottomScrollLeft();
+            console.log(`bottomScrollLeft: ${bottomScrollLeft}`);
+            if (bottomScrollLeft > BOTTOM_IGNORE_OFFSET) {
+                toggleScrollDownButtonVisibility(false);
+            } else {
+                toggleScrollDownButtonVisibility(true);
+            }
+        }
+
+        // <end> bottom scroll <end> //
+
+        // scroll on pressing the "Scroll to learn more" / chevron down icon
+        document.querySelector('#scroll-indicator').addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function changeNavbarItemsColor(color) {
+            let navBar = document.getElementById("nav-items");
+
+            navBar.querySelectorAll("*").forEach(child=> {
+                if (!child.classList.contains("active")) {
+                    child.style.color = color;
+                }
+            })
+        }
+
+        function changeLogoColor(color) {
+            document.getElementsByClassName("logo")[0].style.color = color;
+        }
+
+        // Get elements
+        const header = document.getElementById("header");
+        const main = document.getElementById("main");
+
+        let isScrolledDown = false;
+
+        // Listen to scroll event
+        window.addEventListener('scroll', async () => {
+
+            // When scrolling down
+            if (window.scrollY > 0) {
+
+                isScrolledDown = true;
+
+                if (window.scrollY >= 13) {
+                    changeNavbarItemsColor("#efefef");
+
+                    changeLogoColor("white");
+                }
+
+                // Shrink the main element's height as we scroll down
+                main.classList.add("shrinking"); // Apply shrinking height animation
+                header.classList.add("fixedHeader"); // Fix the header at the top
+
+                // Hide the header children
+                document.getElementById("header-elements").classList.add("hideElement");
+                // the "learn more, chevron icon" are also part of header but they are outisde the actual header as their position fixed 
+                // hiding the parent of the "learn more, chevron icon" elements
+                document.getElementById("scroll-indicator").classList.add("hideElement")
+                // remove the main element's top margin
+                main.classList.add("margin-margin-zero")
+                
+                await delay(500);
+            } else {
+
+                changeNavbarItemsColor("#2E2B3A");
+                changeLogoColor("#2E2B3A");
+                // When scrolling back to the top, restore the main element's height
+                main.classList.remove("shrinking"); // Remove shrinking height animation
+                header.classList.remove("fixedHeader"); // Remove fixed header
+
+                // show header child back
+                document.getElementById("header-elements").classList.remove("hideElement");
+                // show the scroll-indicator back (learn more & chevron icon)
+                document.getElementById("scroll-indicator").classList.remove("hideElement")
+
+                // show the main element's top margin back
+                // main.classList.remove("main-margin-zero")
+            }
+
+            // Actual tested values - diff header elements with diff heigh require different offsets
+            if (window.scrollY >= 13) {
+                document.getElementsByClassName("navbar")[0].classList.add("removePadding")
+                header.classList.add("addCoverImg")
+
+                checkBottomScrollLeft();
+            } else {
+                document.getElementsByClassName("navbar")[0].classList.remove("removePadding")
+                header.classList.remove("addCoverImg")
+
+                toggleScrollDownButtonVisibility(true);
+            }
+        });
+    </script>
+</body>
+</html>
