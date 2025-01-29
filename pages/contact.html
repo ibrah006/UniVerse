@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="../css/hero-section.css">
     <link rel="stylesheet" href="../css/values-section.css">
 
-    <script type="module" src="../scripts/essential.js"></script>is 
+    <script type="module" src="../scripts/essential.js"></script>
+    <script type="module" src="../scripts/navbar.js"></script>
 
     <style>
         .hero-overlay {
@@ -54,19 +55,34 @@
 
     <!--  Navbar -->
     <header class="navbar">
+      <div class="main-nav">
         <div class="logo">
           <img src="../assets/icon.png" alt="UniVerse Logo">
           <span>UniVerse</span>
         </div>
-        <nav>
-          <ul class="nav-links">
+        <nav id="nav-desktop">
+          <a id="nav-menu"> <i class="fas fa-bars"></i></a>
+          <ul class="nav-links home-links">
             <li><a href="home.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="about.html" >About</a></li>
-            <li><a href="" class="active">Contact</a></li>
+            <li><a href="events.html" >Events</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <!-- <li class="buy-ticket"><a href="#" class="button">Buy Ticket</a></li> -->
           </ul>
         </nav>
-      </header>
+      </div>
+    
+        <!-- Nav links location for small screens -->
+      <nav id="nav-mobile">
+          <!-- <ul class="nav-links home-links nav-links-small-screen-open">
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="events.html" >Events</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul> -->
+      </nav>
+      
+    </header>
 
      <!-- Hero Section -->
     <section class="hero-container" style="overflow: hidden;">
