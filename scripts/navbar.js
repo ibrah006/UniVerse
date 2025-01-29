@@ -48,7 +48,10 @@ function main() {
 
         navbar.classList.remove("small-screen");
 
-        mobileNav.removeChild(navLinks);
+        try {
+            mobileNav.removeChild(navLinks);
+        } catch(e) {
+        }
 
         document.getElementById("nav-desktop").appendChild(navLinks);
     }
