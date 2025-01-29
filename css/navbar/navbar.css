@@ -1,44 +1,101 @@
 /* Navbar */
+
+nav {
+    align-items: center;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: transparent;
-    }
+    height: 100px;
+    padding: 0px;
+    padding-right: 0px;
+    background: white;
+    position: fixed;
+    margin-top: -100px;
+    z-index: 100;
+}
 
-    .logo {
+.logo {
     display: flex;
     align-items: center;
-    }
+}
 
-    .logo img {
-    height: 30px;
-    margin-right: 10px;
-    }
+.logo img {
+    height: 75px;
+}
 
-    .logo span {
-    font-size: 1.5rem;
+.logo span {
+    font-size: 1.8rem;
     font-weight: bold;
     color: #d04a77;
-    }
+}
 
-    .nav-links {
+#nav-menu {
+    color: #d04a77;
+    cursor: pointer;
+}
+
+#nav-menu.hidden {
+    visibility: hidden;
+}
+
+.nav-links {
     display: flex;
-    gap: 20px;
-    }
+    gap: 15px;
+    margin: 0px
+}
 
-    .nav-links li {
+/* home-links is a class that is used on nav-links to let the responsiveness of page adapt to home page having one button more than other pages */
+
+.nav-links-small-screen-open {
+    display: unset;
+    visibility: visible;
+    position: unset;
+}
+
+.nav-links-small-screen-close {
+    display: absolute;
+    visibility: hidden;
+    position: flex;
+}
+
+.nav-links li {
     list-style: none;
-    }
+    margin-bottom: 5px;
+}
 
-    .nav-links a {
+.nav-links > li > .button {
+    color: white;
+    /* There is already list item spacing */
+    margin-left: 0px;
+}
+
+.nav-links a {
     text-decoration: none;
     color: #444;
-    font-size: 1rem;
-    }
-
-    .nav-links a.active {
-    color: #d04a77;
+    font-size: 1.3rem;
     font-weight: bold;
-    }
+}
+
+.nav-links a.active {
+    color: #d04a77;    
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Small Screen Responsiveness */
+.navbar.small-screen {
+    flex-direction: column;
+    align-items: flex-end;
+    height: fit-content;
+}
+
+.nav-links.small-screen {
+    padding-bottom: 10px
+}

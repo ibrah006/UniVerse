@@ -7,9 +7,17 @@
 
   <title>UniVerse</title>
 
+  <!-- Stylesheets -->
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/navbar/navbar.css">
+  <link rel="stylesheet" href="../css/discover-style.css">
 
   <!-- <style>
 
@@ -17,7 +25,7 @@
 </head>
 <body>
 
-<header>
+<!-- <header>
   <a class="logo" href="home.html">UniVerse</a>
   <div>
     <nav id="nav-elements">
@@ -28,44 +36,102 @@
     </nav>
     <a href="#" class="button">Buy Ticket</a>
   </div>
+</header> -->
+
+<header class="navbar">
+  <div class="main-nav">
+    <div class="logo">
+      <img src="../assets/icon.png" alt="UniVerse Logo">
+      <span>UniVerse</span>
+    </div>
+    <nav id="nav-desktop">
+      <a id="nav-menu"> <i class="fas fa-bars"></i></a>
+      <ul class="nav-links home-links">
+        <li><a href="" class="active">Home</a></li>
+        <li><a href="events.html" >Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- <li class="buy-ticket"><a href="#" class="button">Buy Ticket</a></li> -->
+      </ul>
+    </nav>
+  </div>
+
+    <!-- Nav links location for small screens -->
+  <nav id="nav-mobile">
+      <!-- <ul class="nav-links home-links nav-links-small-screen-open">
+        <li><a href="" class="active">Home</a></li>
+        <li><a href="events.html" >Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul> -->
+  </nav>
+  
 </header>
 
 <main class="header-parent">
-    <div class="header-main-content">
-        <div class="countdown ">
-            <div class="time-box">
-                <span id="days">00</span>
-                <label>Days</label>
-            </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <label>Hours</label>
-            </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <label>Minutes</label>
-            </div>
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <label>Seconds</label>
-            </div>
-        </div>
-        
-        <div id="event-title-date">
-            <div class="event-date">March 24, 2025</div>
-            <div class="event-title">Freshman Orientation</div>
-        </div>
+  <div class="header-main-content">
+      <div class="countdown">
+          <div class="time-box">
+              <span id="days">00</span>
+              <label>Days</label>
+          </div>
+          <div class="time-box">
+              <span id="hours">00</span>
+              <label>Hours</label>
+          </div>
+          <div class="time-box">
+              <span id="minutes">00</span>
+              <label>Minutes</label>
+          </div>
+          <div class="time-box">
+              <span id="seconds">00</span>
+              <label>Seconds</label>
+          </div>
+      </div>
 
-        <div class="buttons">
-            <a href="#" class="register button">Register Now</a>
-            <a href="#" class="learn-more button">Learn More</a>
-        </div>
-    </div>
-    <div style="flex: 1">
-    </div>
+      <div id="event-title-date">
+          <div class="event-date">March 24, 2025</div>
+          <div class="event-title">Freshman Orientation</div>
+      </div>
+
+      <div class="buttons">
+          <a href="#" class="register button">Register Now</a>
+          <a href="event_details.html?name=Freshman Orientation" class="learn-more button">Learn More</a>
+      </div>
+  </div>
+
 </main>
 
+<div class="featured-section">
+  <div class="featured-content">
+    <h2>Discover UniVerse</h2>
+    <p>
+      Join a vibrant community of learners and achievers. Explore our events, 
+      gain insights from our faculty, and experience a campus that inspires.
+    </p>
+    <ul>
+      <li>✓ Cutting-edge Facilities</li>
+      <li>✓ Inclusive Student Life</li>
+      <li>✓ Top-Tier Academics</li>
+    </ul>
+    <a href="contact.html" class="button explore">Book a Visit</a>
+  </div>
+  <img
+    src="../assets/fictional-college.png"
+    alt="Campus"
+    class="featured-image"
+  />
+</div>
+
+<footer>
+  <p>&copy; 2025 ibrah. All rights reserved.</p>
+</footer>
+
+<!-- Manage Navbar Responsiveness -->
+<script src="../scripts/navbar.js"></script>
+
 <script>
+
   const eventDate = new Date("March 24, 2025 00:00:00").getTime();
 
   function formatTime(time) {
@@ -108,7 +174,7 @@
     currentNavElementSelected.style.color = "#E52A6A";
   }
 
-  updateNavSelection();
+  // updateNavSelection();
 
 </script>
 

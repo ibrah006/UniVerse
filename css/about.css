@@ -1,0 +1,49 @@
+/* General styling */
+body {
+    margin: 0;
+    font-family: 'Inria Sans', sans-serif;
+    background-color: #ffffff;
+    color: #2E2B3A;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  header nav a.active {
+    color: #E52A6A;
+  }
+  
+  header nav a:hover {
+    color: #933556;
+  }
+  
+  /* About Content */
+  .main-content {
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .about-section, .vision-section {
+    margin-bottom: 50px;
+  }
+  
+  .about-section h2, .vision-section h2 {
+    font-size: 2.5rem;
+    color: #E52A6A;
+    margin-bottom: 15px;
+  }
+  
+  .about-section p, .vision-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #5C5E65;
+  }
+  
+ 

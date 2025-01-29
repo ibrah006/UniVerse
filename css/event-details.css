@@ -112,10 +112,19 @@ main {
     font-weight: 400;
 }
 
+#header-elements .button {
+    z-index: 100;
+}
+
 /*// Navbar styling //*/
 
 .logo {
-    margin-left: 35px
+    margin-left: 35px;
+    color: #E52A6A;
+}
+
+.logo img {
+    height: 75px;
 }
 
 /*// Navbar styling //*/
@@ -123,10 +132,11 @@ main {
 /*// Header Content start //*/
 
 #header-img {
-    width: 100%
+    width: 100%;
+    filter: brightness(65%); 
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1090px) {
     #header-img {
         width: unset;
         /* background: ; */
@@ -224,7 +234,7 @@ main {
 /* Event Details Section */
 
 #main-content {
-    padding-top: 15vh;
+    padding-top: 25vh;
     padding-bottom: 8vh;
     padding-inline: 18%;
 }

@@ -39,7 +39,7 @@
 }
 
 
-main .button {
+.button {
     padding-block: 12.5px;
     padding-inline: 68px;
     border-radius: 30px;
@@ -62,6 +62,7 @@ h1 {
 .video-container {
     position: relative;
     width: 100%;
+    margin-top: 100px;
     margin-bottom: 75px
 }
   
@@ -70,7 +71,12 @@ h1 {
     height: 57vh;
     min-height: 390px;
     object-fit: cover;
-    background: rgba(0,0,0,0.5)
+    background: rgba(0,0,0,0.5);
+    filter: blur(5px)
+}
+
+.background-video:hover {
+  filter: brightness(50%);
 }
   
 .centered-text {
@@ -115,20 +121,27 @@ h1 {
     margin: 0;
     margin-bottom: 50px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns, evenly spaced */
-    grid-gap: 20px; /* Gap between grid items */
+    grid-gap: 35px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 3 columns, evenly spaced */
     width: 100%; /* Full container width */
     box-sizing: border-box;
   }
 
-  @media (max-width: 1200px) {
+@media (max-width: 1850px) {
+    .events-list {
+      grid-template-columns: repeat(3, 1fr); /* 2 columns on smaller screens */
+      /*padding: 0 5%; Reduced padding on smaller screens */
+    }
+  }
+
+@media (max-width: 1200px) {
     .events-list {
       grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
       /*padding: 0 5%; Reduced padding on smaller screens */
     }
   }
   
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
     .events-list {
       grid-template-columns: 1fr; /* 1 column on very small screens */
       /* padding: 0 5%; */
@@ -139,6 +152,7 @@ h1 {
 .event-card {
   background-color: #f9f9f9;
   width: inherit;
+  border-radius: 25px;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;  
   }
@@ -172,7 +186,8 @@ h1 {
     margin: 0px;
     text-align: left;
     margin-top: 25px;
-    font-size: 30px
+    font-size: 30px;
+    height: 75px;
   }
 
 .event-description {
@@ -190,7 +205,10 @@ h1 {
 
 .event-card img {
     margin: 0px;
-    width: inherit
+    width: inherit;
+    /* border-radius: 25px; */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 /* chevron-down icon in the header */
@@ -211,4 +229,56 @@ h1 {
     100% {
         transform: translateY(0); /* End back at the normal position */
     }
+}
+
+/* udpated */
+
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+  /* max-width: 350px; */
+  border-radius: 25px;
+  overflow: hidden; /* Ensures image fits within rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #e52a6a; /* Eye-catching color for date */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: #2e2b3a; /* Neutral dark text */
+  margin: 10px 0;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #5c5e65; /* Subtle gray text */
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image covers the area nicely */
 }

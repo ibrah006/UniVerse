@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/navbar/navbar.css">
+    <link rel="stylesheet" href="../css/hero-section.css">
+    <link rel="stylesheet" href="../css/values-section.css">
+
+    <script type="module" src="../scripts/essential.js"></script>is 
+
+    <style>
+        .hero-overlay {
+            filter: blur(10px);
+        }
+
+        .values-section {
+            /* margin: 10%; */
+            padding-inline: 10%;
+            padding-block: 8%;
+            width: 100%;
+        }
+
+        h3 {
+            color: black;
+        }
+
+        /* Contact form bootstrap */
+        dark-color {
+            color: black;
+        }
+
+        /* For some reason the button has blue color on hover */
+        .button:hover {
+            color: #eeeeee;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--  Navbar -->
+    <header class="navbar">
+        <div class="logo">
+          <img src="../assets/icon.png" alt="UniVerse Logo">
+          <span>UniVerse</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="" class="active">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+     <!-- Hero Section -->
+    <section class="hero-container" style="overflow: hidden;">
+        <img src="../assets/fictional-college-contact.png" style="object-fit:inherit; width: 100%; height: inherit; position: absolute;">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>Contact Us</h1>
+            <p>Reach Out – We’re Just a Message Away!</p>
+        </div>
+    </section>
+
+    <!-- call, email, visit -->
+     <!-- Values Grid -->
+    
+     <section class="values-section">
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Call us</h3>
+                <p>+91 123 456 7890</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>contact@example.com</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visit Us</h3>
+                <p>123 Street, City, Country</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <form class="needs-validation" novalidate>
+        <div class="container">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label" style="color: #333333;">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="John" required>
+                <div class="invalid-feedback">First name is required.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label" style="color: #333333;">First Name</label>
+                <input type="text" class="form-control" id="secondName" placeholder="Doe" required>
+                <div class="invalid-feedback">First name is required.</div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="email" class="form-label" style="color: #333333;">Email Address</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                  <div class="invalid-feedback">Provide a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactNumber" class="form-label" style="color: #333333;">Contact Number</label>
+                  <input type="text" class="form-control" id="contactNumber" placeholder="+911234567890" required>
+                  <div class="invalid-feedback">Contact number is required.</div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="message" class="form-label" style="color: #333333;">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..." required></textarea>
+                <div class="invalid-feedback">Message is required.</div>
+            </div>
+            
+            <div class="text-end mt-5">
+                <a id="submitButton" class="button" type="submit">Submit</a>
+            </div>
+        </div>
+        </form>
+        
+    </section>
+
+    <script>
+        // Form validation on Submit
+
+        var submitButton = document.getElementById('submitButton');
+
+        var form = document.querySelector(".needs-validation");
+      
+        submitButton.addEventListener('click', function (event) {
+          // Check if the form is valid
+          if (!form.checkValidity()) {
+            // If form is invalid, prevent submission and add validation classes
+            event.preventDefault();
+            event.stopPropagation();
+          }
+      
+          // Add the 'was-validated' class to show validation feedback
+          form.classList.add('was-validated');
+        }, false);
+    </script>
+      
+    
+</body>
+</html>

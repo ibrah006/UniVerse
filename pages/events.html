@@ -14,18 +14,18 @@
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/events.css">
+    <link rel="stylesheet" href="../css/navbar/navbar.css">
 
-    <script>
-        function goToEventDetials() {
-            window.location.href = "event_details.html";
-        }
-    </script>
+    <script type="module" src="../scripts/events_listing.js"></script>
 
+    <script type="module" src="../scripts/database.js"></script>
+
+    <script type="module" src="../scripts/essential.js"></script>
 
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <a class="logo" href="home.html">UniVerse</a>
         <div>
             <nav>
@@ -37,17 +37,31 @@
         </div>
 
 
-    </header>
+    </header> -->
+    <header class="navbar">
+        <div class="logo">
+          <img src="../assets/icon.png" alt="UniVerse Logo">
+          <span>UniVerse</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="" class="active">Events</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     
     <div class="video-container">
-                <video class="background-video"  muted loop>
+                <video class="background-video"  muted loop autoplay>
                 <source src="../assets/videos/events-page-header.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video>
 
                 <div class="centered-text">
-                    <h1>What's On</h1>
-                    <p >Missed one? Don't worry. Check on what's next and never miss another!</p>
+                    <h1 id="header-title">Upcoming Events</h1>
+                    <p >Stay informed and never miss out! Check out our schedule for exciting upcoming events.</p>
                     <a href="#" class="button">Register Now</a>
                     
                     <div class="chevron" style="color: white; height: 10vh; align-content: end; font-size: 17.5px;">
@@ -58,8 +72,10 @@
             </div>
     <main class="main">
 
+        
+
         <div class="events-list">
-            <div class="event-card" onclick="goToEventDetials()">
+            <!-- <div class="event-card" onclick="goToEventDetials()">
                 <div class="card-content">
                     <p class="event-date">Friday, 24 March 2025</p>
                     <h3 class="event-title">Freshman Orientation</h3>
@@ -67,13 +83,31 @@
                         Join us for Freshman Orientation to get an overview of your college journey. Interact with faculty, participate in icebreaker activities....
                     </p>
                 </div>
-                <img src="../assets/events/thumbnails/freashmanorientation.jpeg">
-            </div>
+                <img src="../assets/events/thumbnails/techfest.jpg" style="object-fit:inherit;">
+            </div> -->
+        </div>
+        
 
 
     </main>
 
+    <!-- Manage Navbar Responsiveness -->
+    <script src="../scripts/navbar.js"></script>
+
     <script>
+
+        // --> Header Responsiveness <--
+        const headerTitle = document.getElementById("header-title");
+        window.addEventListener('resize', () => {
+            const viewportWidth = window.innerWidth;
+
+            if (viewportWidth <= 580) {
+                headerTitle.innerText = "Upcoming";
+            } else {
+                headerTitle.innerText = "Upcoming Events";
+            }
+        });
+
         function updateNavSelection() {
             const pathSplit = window.location.pathname.split("/");
             let currentPage = pathSplit[pathSplit.length - 1];
@@ -87,7 +121,7 @@
             currentNavElementSelected.className = "active";
         }
 
-        updateNavSelection();
+        // updateNavSelection();
 
         function windowDebug() {
             let screenWidth = document.getElementsByClassName("main")[0].clientWidth;

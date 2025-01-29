@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inria Sans', sans-serif;
+            background-color: #F9F9F9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #2E2B3A;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button {
+            width: 100%;
+            background-color: #457B9D;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1D3557;
+        }
+
+        .link {
+            display: block;
+            margin-top: 15px;
+            color: #457B9D;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Event Registration</h2>
+        <input type="text" class="input-field" placeholder="Full Name" required>
+        <input type="email" class="input-field" placeholder="Email" required>
+        <input type="tel" class="input-field" placeholder="Phone Number" required>
+        <select class="input-field" required>
+            <option value="" disabled selected>Select Event</option>
+            <option value="Freshman Orientation">Freshman Orientation</option>
+            <option value="Tech Conference">Tech Conference</option>
+            <option value="Music Fest">Music Fest</option>
+        </select>
+        <button class="button">Register</button>
+        <a href="events.html" class="link">Back to Events</a>
+    </div>
+</body>
+</html>

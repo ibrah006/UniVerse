@@ -17,7 +17,8 @@ header {
   align-items: center;
   padding-inline: 25px;
   height: 100px;
-  background-color: #FFFFFF;
+  width: 100%;
+  /* background-color: white; */
 }
 
 .logo {
@@ -25,6 +26,7 @@ header {
   font-weight: bold;
   color: #2E2B3A;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo:hover {
@@ -68,23 +70,55 @@ header .button {
 main {
   text-align: center;
   padding: 28vh 28px;
+  cursor: default;
+  margin-top: 100px;
 }
 
 .countdown {
   display: flex;
   justify-content: left;
   gap: 10px;
+  transition: scale .2s ease;
 }
 
+@media(max-width: 615px) {
+  .countdown {
+    scale: .9;
+    /* position: absolute; */
+  }
+}
+
+@media(max-width: 570px) {
+  .countdown {
+    scale: 3;
+  }
+}
+
+@media(max-width: 615px) {
+  /* .countdown .time-box span {
+    font-size: 8vw;
+  } */
+  .countdown {
+    scale: .9;
+    /* position: absolute; */
+  }
+}
+
+
 .countdown .time-box {
-  background-color: rgba(255, 255, 255, 0.09);
+  background-color: rgba(255, 255, 255, .09);
   height: 140px;
   width: 140px;
+  border-radius: 25px;
   /* border-radius: 5px; */
   text-align: center; 
   align-content: center;
   justify-items: center;
-  border: 1px solid #5C5E65;
+  /* border: 1px solid #5C5E65; */
+}
+
+.countdown .time-box:hover {
+  opacity: .85;
 }
 
 .countdown .time-box span {
@@ -93,6 +127,12 @@ main {
   font-weight: 500;
   margin-bottom: 5px;
 }
+
+/* @media(max-width: 615px) {
+  .countdown .time-box span {
+    font-size: 8vw;
+  }
+} */
 
 .countdown .time-box label {
   font-size: 22.3px;
@@ -112,10 +152,10 @@ main {
 }
 
 .button {
+  border-radius: 30px;
   background-color: #E52A6A;
   color: #FFFFFF;
   border: none;
-  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   /* some margin already exists on the left of this element (from the the nav item) */
@@ -135,7 +175,6 @@ main {
 .buttons a {
   display: inline-block;
   /* padding: 22px 43px; */
-  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   width: 190px;
@@ -148,12 +187,13 @@ main {
   background-color: #E52A6A;
   color: #FFFFFF;
   margin-right: 8px;
+  margin-bottom: 8px
 }
 
 .buttons .learn-more {
-  background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #5C5E65;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #E52A6A;
+  /* border: 2px solid #5C5E65; */
 }
 
 
@@ -164,6 +204,24 @@ main {
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat;
     position: relative;
+}
+
+@media(max-width: 1050px) {
+  .header-parent {
+    padding-top: 24vh
+  }
+}
+
+@media(max-width: 775px) {
+  .header-parent {
+    padding-top: 20vh
+  }
+}
+
+@media(max-width: 675px) {
+  .header-parent {
+    padding-top: 16vh
+  }
 }
 
 .header-parent::before {
@@ -185,3 +243,19 @@ main {
     position: relative;
     z-index: 2; /* Ensures content is above the blurred background */
 }
+
+@media(max-width: 935px) {
+  .header-main-content {
+    width: 100%;
+  }
+}
+
+  /* Footer */
+  footer {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 15px;
+    color: #757575;
+    font-size: 0.9rem;
+  }
+  
