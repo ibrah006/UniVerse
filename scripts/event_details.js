@@ -59,7 +59,7 @@ function onLoad() {
         if (detailElement) detailElement.innerText = event[detailTitles[i]];
     }
 
-    eventImageSrc = `/assets/events/${event.img}`;
+    eventImageSrc = `../assets/events/${event.img}`;
 
     console.log(`this is the path of cover img: ${eventImageSrc}`);
 

@@ -43,7 +43,7 @@ events.forEach(event => {
   const eventImage = document.createElement('img');
   // eventImage.classList.add();
   if (event.img) {
-    eventImage.src = `/assets/events/${event.img.replace("%7D", "")}`;
+    eventImage.src = `../assets/events/${event.img.replace("%7D", "")}`;
   }
   eventImage.alt = `${event.title} Thumbnail`;
   eventCard.appendChild(eventImage);
