@@ -22,7 +22,14 @@
 
     <script type="module" src="../scripts/essential.js"></script>
 
+    <style>
+        #nav-items, .logo {
+            z-index: 2;
+        }
+    </style>
+
 </head>
+
 <body>
     <header id="header">
         <div class="navbar">
@@ -39,6 +46,7 @@
                 </nav>
             </div>
         </div>
+        <div class="overlay hideElement"></div>
     </header>
 
     <main id="main">
@@ -46,7 +54,9 @@
         <div id="header-elements">
             <h1 id="header-title">Join Us Now!</h1>
             <p id="header-message">Welcome to campus! Meet your peers and learn about college life.</p>
-            <button class="button">Register</button>
+            <!-- The below element inherits some of the properties of button but acts nothing like a button  -->
+            <!-- The below elemtn displays the name of the event -->
+            <a class="button" style="font-weight: bold; font-size: 19px; background-color: transparent; border: 3px solid #E52A6A;">Freshman Orientation</a>
         </div>
     </main>
     <script>
@@ -99,7 +109,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec lobortis massa, nec sollicitudin ligula. Aliquam posuere nisl id neque viverra sodales. Quisque quis nunc.
             </p>
             <br><br>
-            <button class="button">Register</button>
+            <a class="button register">Register</a>
         </section>
     </div>
 

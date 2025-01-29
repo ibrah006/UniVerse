@@ -35,6 +35,14 @@ main {
     width: 100%;
 }
 
+/* Overlay for navbar when image is over it */
+.overlay {
+    background-color: rgba(0,0,0, .35);
+    height: inherit;
+    width: inherit;
+    position: absolute;
+}
+
 /* Scroll down button */
 #scroll-down-button {
     height: 45px;
@@ -77,6 +85,7 @@ main {
     padding: 0px; */
 }
 
+ /* This goes into the nav bar when scrolled down to the event details */
 .addCoverImg {
     background-image: url('../assets/events/freashmanorientation.jpg');
     background-size: cover;
@@ -133,7 +142,7 @@ main {
 
 #header-img {
     width: 100%;
-    filter: brightness(65%); 
+    filter: brightness(58%); 
 }
 
 @media (max-width: 1090px) {

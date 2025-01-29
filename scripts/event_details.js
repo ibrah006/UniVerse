@@ -10,7 +10,8 @@ link.href = "/css/event-details.css";
 
 // Get hold of the event name/title that was passed in from events page
 const urlParams = new URLSearchParams(window.location.search);
-const eventName = urlParams.get("name");
+let eventName = urlParams.get("name");
+eventName = eventName.replaceAll("%26", "&")
 console.log(`from the frontend (params): ${eventName}`);
 
 // const eventName = urlParams.get("name");
@@ -161,7 +162,6 @@ function changeLogoColor(color) {
     document.getElementsByClassName("logo")[0].style.color = color;
 }
 
-// Get elements
 const header = document.getElementById("header");
 const main = document.getElementById("main");
 
@@ -192,6 +192,10 @@ window.addEventListener('scroll', async () => {
         document.getElementById("scroll-indicator").classList.add("hideElement")
         // remove the main element's top margin
         main.classList.add("margin-margin-zero")
+
+        
+        // Show the overlay for the navbar by removing the hideElement class
+        document.querySelector(".overlay").classList.remove("hideElement");
         
         await delay(500);
     } else {
@@ -206,6 +210,10 @@ window.addEventListener('scroll', async () => {
         document.getElementById("header-elements").classList.remove("hideElement");
         // show the scroll-indicator back (learn more & chevron icon)
         document.getElementById("scroll-indicator").classList.remove("hideElement")
+
+        // (adding hideElement class to hide)
+        // Hide the overlay for the navbar when scrolling up as it has absolute position
+        document.querySelector(".overlay").classList.add("hideElement");
 
         // show the main element's top margin back
         // main.classList.remove("main-margin-zero")
@@ -226,3 +234,13 @@ window.addEventListener('scroll', async () => {
         toggleScrollDownButtonVisibility(true);
     }
 });
+
+// Go to Register Page
+
+const registerButtons = document.querySelector(".button.register");
+registerButtons[i].addEventListener("click", goToRegisterPage);
+
+function goToRegisterPage() {
+    const eventNameTemp = eventName.replaceAll("&", "%26");
+    window.location.href = `register.html?event=${eventNameTemp}`;
+}

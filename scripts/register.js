@@ -13,11 +13,12 @@ events.forEach(event=> {
 
 // Form validation
 
-// Select the form and the submit button
 const form = document.getElementById('registerForm');
 const submitButton = form.querySelector('button[type="submit"]');
 
-// Add event listener for form submission
+// Get hold of event dropdown
+const eventInput = document.getElementById('event-input');
+
 form.addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent the form from submitting by default
 
@@ -50,7 +51,6 @@ form.addEventListener('submit', function (e) {
     }
 
     // Validate event selection
-    const eventInput = document.getElementById('event-input');
     if (eventInput.value === '') {
         showError(eventInput, 'Please select an event');
     }
@@ -64,3 +64,9 @@ function showError(inputElement, message) {
     errorMessage.textContent = message;
     inputElement.parentElement.insertBefore(errorMessage, inputElement.nextSibling);
 }
+
+// Manage Redirect from Event
+const urlParams = new URLSearchParams(window.location.search);
+let eventName = urlParams.get("event");
+eventName = eventName.replaceAll("%26", "&");
+eventDropdown.value = eventName;

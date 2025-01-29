@@ -1,7 +1,7 @@
 export const events = [
   {
     "title": "Freshman Orientation",
-    "datetime": "24-03-2025\n09:00 am",
+    "datetime": "03-24-2025\n09:00 am",
     "venue": "Auditorium Hall",
     "organizer": "Student Affairs Department",
     "industry": "Education",
@@ -10,7 +10,7 @@ export const events = [
   },
   {
     "title": "Tech Fest 2025",
-    "datetime": "10-04-2025\n10:00 am",
+    "datetime": "04-10-2025\n10:00 am",
     "venue": "Engineering Block, Main Campus",
     "organizer": "Department of Computer Science & Engineering",
     "industry": "Technology",
@@ -18,7 +18,7 @@ export const events = [
   },
   {
     "title": "Cultural Night",
-    "datetime": "15-05-2025\n06:00 pm",
+    "datetime": "05-15-2025\n06:00 pm",
     "venue": "Open Air Theatre",
     "organizer": "Cultural Club",
     "industry": "Entertainment",
@@ -26,7 +26,7 @@ export const events = [
   },
   {
     "title": "Sports Meet 2025",
-    "datetime": "05-06-2025\n08:00 am",
+    "datetime": "06-05-2025\n08:00 am",
     "venue": "Sports Complex",
     "organizer": "Sports Committee",
     "industry": "Sports",
@@ -35,7 +35,7 @@ export const events = [
   },
   {
     "title": "Alumni Reunion",
-    "datetime": "12-07-2025\n05:00 pm",
+    "datetime": "07-12-2025\n05:00 pm",
     "venue": "Convention Center",
     "organizer": "Alumni Relations Office",
     "industry": "Networking",
@@ -43,7 +43,7 @@ export const events = [
   },
   {
     "title": "Hackathon 2025",
-    "datetime": "15-04-2025\n09:00 am",
+    "datetime": "04-15-2025\n09:00 am",
     "venue": "IT Lab, Building A",
     "organizer": "Tech Club",
     "industry": "Technology",
@@ -51,7 +51,7 @@ export const events = [
   },
   {
     "title": "Art & Craft Exhibition",
-    "datetime": "20-03-2025\n10:00 am",
+    "datetime": "03-20-2025\n10:00 am",
     "venue": "Art Gallery, Main Campus",
     "organizer": "Fine Arts Department",
     "industry": "Arts & Crafts",
@@ -60,7 +60,7 @@ export const events = [
   },
   {
     "title": "Annual Debate Competition",
-    "datetime": "01-05-2025\n02:00 pm",
+    "datetime": "05-01-2025\n02:00 pm",
     "venue": "Auditorium Room 5",
     "organizer": "Debate Society",
     "industry": "Education",
@@ -69,7 +69,7 @@ export const events = [
   },
   {
     "title": "Open Mic Night",
-    "datetime": "27-03-2025\n06:00 pm",
+    "datetime": "03-27-2025\n06:00 pm",
     "venue": "Student Lounge",
     "organizer": "Student Union",
     "industry": "Entertainment",
@@ -78,7 +78,7 @@ export const events = [
   },
   {
     "title": "Environmental Awareness Day",
-    "datetime": "22-04-2025\n10:00 am",
+    "datetime": "04-22-2025\n10:00 am",
     "venue": "Green Zone, Campus Park",
     "organizer": "Environmental Club",
     "industry": "Environment",
@@ -87,7 +87,7 @@ export const events = [
   },
   {
     "title": "Science Fair",
-    "datetime": "18-05-2025\n11:00 am",
+    "datetime": "05-18-2025\n11:00 am",
     "venue": "Exhibition Hall",
     "organizer": "Science Club",
     "industry": "Science & Technology",
@@ -95,7 +95,7 @@ export const events = [
   },
   {
     "title": "Drama Club Performance",
-    "datetime": "10-06-2025\n07:00 pm",
+    "datetime": "06-10-2025\n07:00 pm",
     "venue": "College Auditorium",
     "organizer": "Drama Club",
     "industry": "Entertainment",
@@ -104,7 +104,7 @@ export const events = [
   },
   {
     "title": "Photography Workshop",
-    "datetime": "25-05-2025\n09:30 am",
+    "datetime": "05-25-2025\n09:30 am",
     "venue": "Room 202, Media Block",
     "organizer": "Photography Society",
     "industry": "Arts & Media",
@@ -113,7 +113,7 @@ export const events = [
   },
   {
     "title": "Literature Festival",
-    "datetime": "05-06-2025\n10:00 am",
+    "datetime": "06-05-2025\n10:00 am",
     "venue": "Library Hall",
     "organizer": "Literature Society",
     "industry": "Literature",
@@ -122,7 +122,7 @@ export const events = [
   },
   {
     "title": "Annual Music Concert",
-    "datetime": "15-07-2025\n06:00 pm",
+    "datetime": "07-15-2025\n06:00 pm",
     "venue": "Open Air Theatre",
     "organizer": "Music Club",
     "industry": "Music & Entertainment",
@@ -131,7 +131,7 @@ export const events = [
   },
   {
     "title": "Startup Pitch Event",
-    "datetime": "20-06-2025\n03:00 pm",
+    "datetime": "06-20-2025\n03:00 pm",
     "venue": "Business Block Conference Room",
     "organizer": "Entrepreneurship Club",
     "industry": "Business & Entrepreneurship",
@@ -139,7 +139,7 @@ export const events = [
   },
   {
     "title": "Yoga & Wellness Workshop",
-    "datetime": "01-07-2025\n08:00 am",
+    "datetime": "07-01-2025\n08:00 am",
     "venue": "Sports Hall 3",
     "organizer": "Wellness Committee",
     "industry": "Health & Wellness",
@@ -147,7 +147,7 @@ export const events = [
   },
   {
     "title": "Career Fair 2025",
-    "datetime": "10-07-2025\n10:00 am",
+    "datetime": "07-10-2025\n10:00 am",
     "venue": "Career Services Center",
     "organizer": "Career Services",
     "industry": "Employment",
@@ -155,7 +155,7 @@ export const events = [
   },
   {
     "title": "Coding Bootcamp",
-    "datetime": "12-08-2025\n09:00 am",
+    "datetime": "08-12-2025\n09:00 am",
     "venue": "IT Lab, Block B",
     "organizer": "Tech Club",
     "industry": "Technology & Education",
@@ -163,7 +163,7 @@ export const events = [
   },
   {
     "title": "Dance Competition",
-    "datetime": "05-09-2025\n05:00 pm",
+    "datetime": "09-05-2025\n05:00 pm",
     "venue": "Cultural Centre",
     "organizer": "Dance Club",
     "industry": "Entertainment",

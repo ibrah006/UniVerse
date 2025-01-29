@@ -4,6 +4,7 @@ const eventsContainer = document.getElementsByClassName("events-list")[0];
 
 const goToEventDetails = (eventName)=> {
   console.log(`event detail: ${eventName}`);
+  eventName = eventName.replaceAll("&", "%26")
   window.location.href = `event_details.html?name=${eventName}`;
 }
 
