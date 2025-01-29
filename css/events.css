@@ -211,25 +211,6 @@ h1 {
     border-bottom-right-radius: 25px;
 }
 
-/* chevron-down icon in the header */
-.centered-text .chevron {
-  font-size: 17.5px;
-  color: white;
-  animation: bounce 2s ease-in-out infinite; /* Apply the animation */
-  color: white; align-content: end; font-size: 17.5px;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0); /* Start at the normal position */
-    }
-    50% {
-        transform: translateY(20px); /* Move up by 5px */
-    }
-    100% {
-        transform: translateY(0); /* End back at the normal position */
-    }
-}
 
 /* udpated */
 

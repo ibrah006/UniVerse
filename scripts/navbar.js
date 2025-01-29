@@ -1,5 +1,6 @@
-// Nav links
+// Navlinks
 const navLinks = document.querySelector(".nav-links")
+
 // Menu button to toggle menu visinility in small screens
 const menuButton = document.getElementById("nav-menu");
 
@@ -9,12 +10,25 @@ const navbar = document.querySelector(".navbar");
 // Mobile nav
 const mobileNav = document.getElementById("nav-mobile");
 
-window.addEventListener("resize", main);
+window.addEventListener("resize", ()=> {
+    main(false);
+});
 
-function main() {
+var smallScreen = false;
+
+function main(onStart) {
     const width = window.innerWidth;
 
-    if (width <= 1100) {
+    // Special privilage for on start
+    if (onStart) {
+        console.log(`onStart: triggerred`)
+        smallScreen = !(width <= 1110);
+    } else {
+        console.log(`not onStart: triggerred`)
+    }
+
+    if (width <= 1100 && !smallScreen) {
+        smallScreen = true;
         // Small Screen / Mobile
 
         // Unhide the Menu button
@@ -29,14 +43,17 @@ function main() {
         navbar.classList.add("small-screen");
 
         // Remove navlinks from the desktop nav element
-        document.getElementById("nav-desktop").removeChild(navLinks);
+        const desktopNav = document.getElementById("nav-desktop");
+        console.log(`dekstopnav children: ${desktopNav.children}`);
+        desktopNav.removeChild(navLinks);
         // And add navlinks to the mobile nav element
         mobileNav.appendChild(navLinks);
 
         // The menu button no press event lisener can also be placed inside this function 
         // but is placed outside for simplicity.
         // There won't be any unintended events as the button will be hidden when the screen is large enough
-    } else {
+    } else if (width>1100 && smallScreen) {
+        smallScreen = false;
         // Large Screen
 
         // Hide the Menu button
@@ -50,14 +67,13 @@ function main() {
 
         try {
             mobileNav.removeChild(navLinks);
-        } catch(e) {
-        }
+        } catch(e) {}
 
         document.getElementById("nav-desktop").appendChild(navLinks);
     }
 }
 
-main();
+main(true);
 
 menuButton.addEventListener("click", () => {
     console.log("menu button pressed");
