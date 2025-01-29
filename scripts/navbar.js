@@ -60,6 +60,7 @@ function main() {
 main();
 
 menuButton.addEventListener("click", () => {
+    console.log("menu button pressed");
     const isOpen = navLinks.classList.contains("nav-links-small-screen-open");
     if (isOpen) {
         navLinks.classList.remove("nav-links-small-screen-open");
