@@ -93,4 +93,7 @@
   .featured-content h2 {
     margin: 0px;
   }
+  .overlay {
+    width: 100%
+  }
 }
