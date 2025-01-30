@@ -10,7 +10,7 @@ export const events = [
   },
   {
     "title": "Tech Fest 2025",
-    "datetime": "04-10-2025\n10:00 am",
+    "datetime": "02-10-2025\n10:00 am",
     "venue": "Engineering Block, Main Campus",
     "organizer": "Department of Computer Science & Engineering",
     "industry": "Technology",

@@ -44,7 +44,6 @@ function main(onStart) {
 
         // Remove navlinks from the desktop nav element
         const desktopNav = document.getElementById("nav-desktop");
-        console.log(`dekstopnav children: ${desktopNav.children}`);
         desktopNav.removeChild(navLinks);
         // And add navlinks to the mobile nav element
         mobileNav.appendChild(navLinks);

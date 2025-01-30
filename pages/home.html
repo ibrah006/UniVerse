@@ -19,9 +19,20 @@
   <link rel="stylesheet" href="../css/navbar/navbar.css">
   <link rel="stylesheet" href="../css/discover-style.css">
 
-  <!-- <style>
+  <script type="module" src="../scripts/home.js"></script>
+  <script type="module" src="../scripts/database.js"></script>
+  
 
-  </style> -->
+  <style>
+    .button:hover {
+      cursor: pointer;
+      background-color: #da3e74;
+    }
+    .button.learn-more:hover {
+      cursor: pointer;
+      background-color: rgba(255,255,255,.25);
+    }
+  </style>
 </head>
 <body>
 
@@ -68,7 +79,7 @@
   
 </header>
 
-<main class="header-parent">
+<main class="header-parent" id="header-parent">
   <div class="header-main-content">
       <div class="countdown">
           <div class="time-box">
@@ -95,8 +106,8 @@
       </div>
 
       <div class="buttons">
-          <a href="register.html" class="register button">Register Now</a>
-          <a href="event_details.html?name=Freshman Orientation" class="learn-more button">Learn More</a>
+          <a class="register button">Register Now</a>
+          <a class="learn-more button">Learn More</a>
       </div>
   </div>
 
@@ -132,47 +143,7 @@
 
 <script>
 
-  const eventDate = new Date("March 24, 2025 00:00:00").getTime();
 
-  function formatTime(time) {
-    if (Number(time) < 10) {
-      return `0${time}`;
-    }
-    return time;
-  }
-
-  const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").textContent = formatTime(days);
-    document.getElementById("hours").textContent = formatTime(hours);
-    document.getElementById("minutes").textContent = formatTime(minutes);
-    document.getElementById("seconds").textContent = formatTime(seconds);
-
-    if (distance < 0) {
-      clearInterval(countdown);
-      document.querySelector(".countdown").textContent = "Event Started";
-    }
-  }, 1000);
-
-  function updateNavSelection() {
-    const pathSplit = window.location.pathname.split("/");
-    let currentPage = pathSplit[pathSplit.length - 1];
-    currentPage = currentPage.replace("#", "");
-    currentPage = currentPage.replace(".html", "");
-
-    console.log(`${currentPage}\ntrying to get element by id: ${`${currentPage}-nav`}`);
-
-    let currentNavElementSelected = document.getElementById(`${currentPage}-nav`);
-
-    currentNavElementSelected.style.color = "#E52A6A";
-  }
 
   // updateNavSelection();
 
