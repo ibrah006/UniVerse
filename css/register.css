@@ -134,7 +134,7 @@ input, select {
     padding: 17px;
     margin-bottom: 20px;
     border: 0px;
-    border-radius: 6px;
+    border-radius: 0px;
     background: #f9f9f9;
     font-size: 14px;
 }

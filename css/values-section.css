@@ -25,6 +25,7 @@
 @media(max-width: 1060px) {
     .values-grid {
         padding-inline: 5%;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media(max-width: 780px) {
@@ -35,7 +36,7 @@
 
 @media(max-width: 680px) {
     .values-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
   
@@ -45,9 +46,8 @@
     padding: 25px 20px;
     min-width: 200px;
     max-width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: 0.3s ease, box-shadow 0.3s ease;
   }
   
   .value-card:hover {

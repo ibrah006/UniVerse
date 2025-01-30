@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/event-details.css">
+    <link rel="stylesheet" href="../css/navbar/navbar.css">
     <!-- The css/event-details.css File is added through scripts/eventdetails.js script -->
 
     <script type="module" src="../scripts/event_details.js"></script>
@@ -22,16 +23,26 @@
 
     <script type="module" src="../scripts/essential.js"></script>
 
+    <script type="module" src="../scripts/navbar.js"></script>
+
     <style>
-        #nav-items, .logo {
-            z-index: 2;
+        .main-nav {
+            z-index: 100;
+        }
+
+        main {
+            margin-top: 100px;
+        }
+
+        .navbar {
+            margin-top: 0px;
         }
     </style>
 
 </head>
 
 <body>
-    <header id="header">
+    <!-- <header id="header">
         <div class="navbar">
             <div class="logo">
                 <img src="../assets/icon.png" alt="UniVerse Logo">
@@ -47,7 +58,39 @@
             </div>
         </div>
         <div class="overlay hideElement"></div>
-    </header>
+    </header> -->
+
+    <header class="navbar">
+        <div class="main-nav">
+          <div class="logo">
+            <img src="../assets/icon.png" alt="UniVerse Logo">
+            <span>UniVerse</span>
+          </div>
+          <nav id="nav-desktop">
+            <a id="nav-menu"> <i class="fas fa-bars"></i></a>
+            <ul class="nav-links home-links">
+              <li><a href="home.html" class="active">Home</a></li>
+              <li><a href="events.html" >Events</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <!-- <li class="buy-ticket"><a href="#" class="button">Buy Ticket</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      
+          <!-- Nav links location for small screens -->
+        <nav id="nav-mobile">
+            <!-- <ul class="nav-links home-links nav-links-small-screen-open">
+              <li><a href="" class="active">Home</a></li>
+              <li><a href="events.html" >Events</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul> -->
+        </nav>
+
+        <div class="overlay hideElement"></div>
+        
+      </header>
 
     <main id="main">
         <img id="header-img" src="../assets/events/freashmanorientation.jpg">
@@ -56,7 +99,7 @@
             <p id="header-message">Welcome to campus! Meet your peers and learn about college life.</p>
             <!-- The below element inherits some of the properties of button but acts nothing like a button  -->
             <!-- The below elemtn displays the name of the event -->
-            <a class="button" style="font-weight: bold; font-size: 19px; background-color: transparent; border: 3px solid #E52A6A;">Freshman Orientation</a>
+            <a class="button event-title" style="font-weight: bold; font-size: 19px; background-color: transparent; border: 3px solid #E52A6A;">Freshman Orientation</a>
         </div>
     </main>
     <script>

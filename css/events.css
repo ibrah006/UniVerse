@@ -32,6 +32,15 @@
     }
 }
 
+@media(max-width: 450px) {
+  .centered-text p {
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
 @media (max-width: 390px) {
   .main {
       padding-inline: 0px;

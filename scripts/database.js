@@ -1,7 +1,7 @@
 export const events = [
   {
     "title": "Freshman Orientation",
-    "datetime": "03-24-2025\n09:00 am",
+    "datetime": "02-24-2025\n09:00 am",
     "venue": "Auditorium Hall",
     "organizer": "Student Affairs Department",
     "industry": "Education",

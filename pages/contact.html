@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/contact.css">
@@ -32,7 +32,6 @@
             /* margin: 10%; */
             padding-inline: 10%;
             padding-block: 8%;
-            width: 100%;
         }
 
         h3 {
@@ -47,6 +46,34 @@
         /* For some reason the button has blue color on hover */
         .button:hover {
             color: #eeeeee;
+        }
+
+        /* Form */
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 19px;
+            margin-bottom: 5px;
+            color: #676767;
+        }
+
+        input, select , textarea{
+            /* width: 93.5%; */
+            padding: 17px;
+            margin-bottom: 20px;
+            border: 0px;
+            border-radius: 0px;
+            background: #f9f9f9;
+            font-size: 14px;
+        }
+
+        textarea {
+          margin-bottom: 50px
         }
     </style>
 
@@ -120,35 +147,35 @@
     </section>
 
     <section class="contact-section">
-        <form class="needs-validation" novalidate>
-        <div class="container">
-            <div class="row mb-3">
-              <div class="col-md-6">
+      <form class="needs-validation" novalidate>
+        <!-- <div class="container"> -->
+            <div class="form-row">
+              <div class="form-column">
                 <label for="firstName" class="form-label" style="color: #333333;">First Name</label>
                 <input type="text" class="form-control" id="firstName" placeholder="John" required>
                 <div class="invalid-feedback">First name is required.</div>
               </div>
-              <div class="col-md-6">
+              <div class="form-column">
                 <label for="lastName" class="form-label" style="color: #333333;">First Name</label>
                 <input type="text" class="form-control" id="secondName" placeholder="Doe" required>
                 <div class="invalid-feedback">First name is required.</div>
               </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
+            <div class="form-row">
+                <div class="form-column">
                   <label for="email" class="form-label" style="color: #333333;">Email Address</label>
                   <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
                   <div class="invalid-feedback">Provide a valid email address.</div>
                 </div>
-                <div class="col-md-6">
+                <div class="form-column">
                   <label for="contactNumber" class="form-label" style="color: #333333;">Contact Number</label>
                   <input type="text" class="form-control" id="contactNumber" placeholder="+911234567890" required>
                   <div class="invalid-feedback">Contact number is required.</div>
                 </div>
             </div>
             
-            <div class="mb-3">
+            <div class="form-column">
                 <label for="message" class="form-label" style="color: #333333;">Message</label>
                 <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..." required></textarea>
                 <div class="invalid-feedback">Message is required.</div>
@@ -157,8 +184,8 @@
             <div class="text-end mt-5">
                 <a id="submitButton" class="button" type="submit">Submit</a>
             </div>
-        </div>
-        </form>
+        <!-- </div> -->
+      </form>
         
     </section>
 

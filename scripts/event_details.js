@@ -149,7 +149,7 @@ function delay(ms) {
 }
 
 function changeNavbarItemsColor(color) {
-    let navBar = document.getElementById("nav-items");
+    let navBar = document.querySelector(".nav-links");
 
     navBar.querySelectorAll("*").forEach(child=> {
         if (!child.classList.contains("active")) {
@@ -162,7 +162,7 @@ function changeLogoColor(color) {
     document.getElementsByClassName("logo")[0].style.color = color;
 }
 
-const header = document.getElementById("header");
+const header = document.querySelector(".navbar");
 const main = document.getElementById("main");
 
 let isScrolledDown = false;
@@ -192,10 +192,6 @@ window.addEventListener('scroll', async () => {
         document.getElementById("scroll-indicator").classList.add("hideElement")
         // remove the main element's top margin
         main.classList.add("margin-margin-zero")
-
-        
-        // Show the overlay for the navbar by removing the hideElement class
-        document.querySelector(".overlay").classList.remove("hideElement");
         
         await delay(500);
     } else {
@@ -211,10 +207,6 @@ window.addEventListener('scroll', async () => {
         // show the scroll-indicator back (learn more & chevron icon)
         document.getElementById("scroll-indicator").classList.remove("hideElement")
 
-        // (adding hideElement class to hide)
-        // Hide the overlay for the navbar when scrolling up as it has absolute position
-        document.querySelector(".overlay").classList.add("hideElement");
-
         // show the main element's top margin back
         // main.classList.remove("main-margin-zero")
     }
@@ -224,6 +216,9 @@ window.addEventListener('scroll', async () => {
         document.getElementsByClassName("navbar")[0].classList.add("removePadding")
         header.classList.add("addCoverImg")
         header.style.backgroundImage = `url(${eventImageSrc})`;
+        
+        // Show the overlay for the navbar by removing the hideElement class
+        document.querySelector(".overlay").classList.remove("hideElement");
 
         checkBottomScrollLeft();
     } else {
@@ -231,16 +226,24 @@ window.addEventListener('scroll', async () => {
         header.classList.remove("addCoverImg")
         header.style.backgroundImage = "unset";
 
+        // (adding hideElement class to hide)
+        // Hide the overlay for the navbar when scrolling up as it has absolute position
+        document.querySelector(".overlay").classList.add("hideElement");
+
         toggleScrollDownButtonVisibility(true);
     }
 });
 
 // Go to Register Page
 
-const registerButtons = document.querySelector(".button.register");
-registerButtons[i].addEventListener("click", goToRegisterPage);
+const registerButton = document.querySelector(".button.register");
+registerButton.addEventListener("click", goToRegisterPage);
 
 function goToRegisterPage() {
     const eventNameTemp = eventName.replaceAll("&", "%26");
     window.location.href = `register.html?event=${eventNameTemp}`;
 }
+
+// Set event title in header
+const eventTitleElement = document.querySelector(".button.event-title")
+eventTitleElement.innerText = eventName;

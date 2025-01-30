@@ -81,28 +81,30 @@ main {
   transition: scale .2s ease;
 }
 
-@media(max-width: 615px) {
+/* @media(max-width: 615px) {
   .countdown {
+    left: -25px;
     scale: .9;
-    /* position: absolute; */
+    position: absolute;
   }
 }
 
-@media(max-width: 570px) {
+@media(max-width: 590px) {
   .countdown {
-    scale: 3;
+    left: -40px;
+    scale: .85;
   }
 }
 
-@media(max-width: 615px) {
-  /* .countdown .time-box span {
-    font-size: 8vw;
+@media(max-width: 558px) {
+  .countdown {
+    left: -50px;
+    scale: .83;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
   } */
-  .countdown {
-    scale: .9;
-    /* position: absolute; */
-  }
-}
+/* } */
 
 
 .countdown .time-box {
@@ -136,6 +138,42 @@ main {
 
 .countdown .time-box label {
   font-size: 22.3px;
+}
+
+@media(max-width: 615px) {
+  .countdown .time-box label {
+    font-size: 20px;
+  }
+  .countdown .time-box span {
+    font-size: 45px;
+  }
+}
+
+@media(max-width: 555px) {
+  .countdown .time-box label {
+    font-size: 18px;
+  }
+  .countdown .time-box span {
+    font-size: 40px;
+  }
+}
+
+@media(max-width: 500px) {
+  .time-box {
+    max-height: 125px;
+  }
+}
+
+@media(max-width: 470px) {
+  .countdown .time-box label {
+    font-size: 16px;
+  }
+  .countdown .time-box span {
+    font-size: 35.6px;
+  }
+  .time-box {
+    max-height: 120px;
+  }
 }
 
 .event-title {
@@ -259,3 +297,13 @@ main {
     font-size: 0.9rem;
   }
   
+
+  /* overlay */
+
+  /* Overlay for navbar when image is over it */
+.overlay {
+  background-color: rgba(0,0,0, .35);
+  height: inherit;
+  width: inherit;
+  position: absolute;
+}

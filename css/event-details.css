@@ -35,13 +35,6 @@ main {
     width: 100%;
 }
 
-/* Overlay for navbar when image is over it */
-.overlay {
-    background-color: rgba(0,0,0, .35);
-    height: inherit;
-    width: inherit;
-    position: absolute;
-}
 
 /* Scroll down button */
 #scroll-down-button {
@@ -256,12 +249,6 @@ main {
 
 @media(max-width: 1230px) {
     #main-content {
-        padding-inline: 10%
-    }
-}
-
-@media (max-width: 1075px) {
-    #main-content {
         padding-inline: 9%;
     }
 }
@@ -321,6 +308,27 @@ main {
     border-left: 1.75px solid #ebebeb;
     height: inherit
 }
+
+@media(max-width: 1370px) {
+    .vertical-rule {
+        border: none;
+        height: 0px
+    }
+}
+@media(max-width: 1230px) {
+    .vertical-rule {
+        border-left: 1.75px solid #ebebeb;
+        height: inherit
+    }
+}
+@media(max-width: 1170px) {
+    .vertical-rule {
+        border: none;
+        height: 0px
+    }
+}
+
+
 
 #event-details h2 {
     font-size: 2.3rem;

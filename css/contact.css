@@ -1,5 +1,30 @@
 
 .contact-section {
-    background-color: #f2f2f2;
     padding: 50px;
+}
+
+.form-row {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    padding-bottom: 0px;
+    /* width: ; */
+}
+
+.form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form {
+    justify-content: flex-end;
+    align-items: end;
+}
+
+@media(max-width: 680px) {
+    .form-row {
+        flex-direction: column;
+    }
 }

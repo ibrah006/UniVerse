@@ -5,8 +5,7 @@
   justify-content: space-between;
   align-items: start;
   gap: 5vw;
-  margin-inline: 100px;
-  margin-block: 100px;
+  margin: 5%;
   min-height: 70vh;
 }
 
@@ -60,5 +59,38 @@
   flex: 1;
   max-width: 35%;
   height: auto;
-  margin-top: 50px;
+  margin-top: 40px;
+}
+
+/* responsiveness  */
+@media(max-width: 1165px) {
+  .featured-image {
+    flex: 3;
+    max-width: 50%;
+  }
+  .featured-content {
+    flex: .8;
+  }
+}
+
+@media(max-width: 885px) {
+  .featured-image {
+    max-width: unset;
+    position: absolute;
+    height: 70vh;
+    z-index: -2;
+    width: 100%;
+    margin-top: 0px;
+    object-fit: cover;
+    filter: blur(3px);
+  }
+  .featured-section {
+    margin: unset;
+  }
+  .featured-content {
+    margin: 9%;
+  }
+  .featured-content h2 {
+    margin: 0px;
+  }
 }
