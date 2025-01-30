@@ -111,10 +111,10 @@ const countdown = setInterval(() => {
 const titleFormattedForUrlParams = mostRecentEvent.title.replace("&", "%26");
 const registerButton = document.querySelector(".register.button");
 registerButton.addEventListener("click", ()=> {
-  window.location.href = `register.html?event=${titleFormattedForUrlParams}`;
+  window.location.href = `/pages/register.html?event=${titleFormattedForUrlParams}`;
 });
 
 const learnMoreButon = document.querySelector(".learn-more.button");
 learnMoreButon.addEventListener("click", ()=> {
-  window.location.href = `event_details.html?name=${titleFormattedForUrlParams}`;
+  window.location.href = `/pages/event_details.html?name=${titleFormattedForUrlParams}`;
 });
